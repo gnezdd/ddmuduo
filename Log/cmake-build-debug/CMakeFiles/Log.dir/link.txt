@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -rdynamic CMakeFiles/log.dir/AsyncLogging.o CMakeFiles/log.dir/CurrentThread.o CMakeFiles/log.dir/LogStream.o CMakeFiles/log.dir/Logging.o CMakeFiles/log.dir/Thread.o -o log 
