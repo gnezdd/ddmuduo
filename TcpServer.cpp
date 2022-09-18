@@ -74,13 +74,7 @@ void TcpServer::newConnection(int sockfd, const InetAddress &peerAddr) {
     InetAddress localAddr(local);
 
     // 根据连接成功的sockfd 创建TcpConnection连接对象
-    TcpConnectionPtr conn(new TcpConnection(
-            ioLoop,
-            connName,
-            sockfd,
-            localAddr,
-            peerAddr
-            ));
+    TcpConnectionPtr conn(new TcpConnection(ioLoop,connName,sockfd,localAddr,peerAddr));
 
     connections_[connName] = conn;
     conn->setConnectionCallback(connectionCallback_);

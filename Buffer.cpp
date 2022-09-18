@@ -11,8 +11,9 @@
 // 从fd上读取数据 Poller工作在LT模式
 // Buffer缓冲区是有大小的 但是从fd上读数据时不知道tcp数据最终的大小
 ssize_t Buffer::readFd(int fd, int *saveErrno) {
-    char extrabuf[65536] = {0}; // 栈上的内存空间
+    char extrabuf[65536] = {0}; // 栈上的内存空间 64k
     struct iovec vec[2];
+
     const size_t writeable = writeableBytes(); // Buffe剩余的可写空间大小
     vec[0].iov_base = begin() + writeIndex_;
     vec[0].iov_len = writeable;

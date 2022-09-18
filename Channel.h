@@ -70,7 +70,7 @@ private:
     const int fd_; // poller监听的对象
     int events_; // 注册fd感兴趣的事件
     int revents_; // poller返回的具体发生的事件
-    int index_;
+    int index_; // fd的状态
 
     std::weak_ptr<void> tie_;
     bool tied_;

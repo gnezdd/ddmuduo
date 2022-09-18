@@ -10,6 +10,7 @@
 #include <sys/socket.h>
 #include <error.h>
 #include <unistd.h>
+#include <fcntl.h>
 
 static int createNonblocking() {
     int sockfd = ::socket(AF_INET,SOCK_STREAM | SOCK_NONBLOCK | SOCK_CLOEXEC,0);
@@ -19,11 +20,18 @@ static int createNonblocking() {
     return sockfd;
 }
 
+static int createIdleFd() {
+    int idleFd = ::open("/dev/null",O_RDONLY | O_CLOEXEC);
+    if (idleFd < 0) LOG_FATAL("%s:%s:%d idlfFd_ create err:%d\n",__FILE__,__FUNCTION__ ,__LINE__,errno);
+    return idleFd;
+}
+
 Acceptor::Acceptor(EventLoop *loop, const InetAddress &listenAddr, bool reuseport)
     : loop_(loop)
     , acceptSocket_(createNonblocking())
     , acceptChannel_(loop,acceptSocket_.fd())
-    , listenning_(false) {
+    , listenning_(false)
+    , idleFd_(createIdleFd()){
     acceptSocket_.setReuseAddr(true);
     acceptSocket_.setReusePort(true);
     acceptSocket_.bindAddress(listenAddr); // bind
@@ -54,8 +62,13 @@ void Acceptor::handleRead() {
         }
     } else {
         LOG_ERROR("%s:%s:%d accept err:%d\n",__FILE__,__FUNCTION__ ,__LINE__,errno);
+        // 文件描述符耗尽
         if (errno == EMFILE) {
             LOG_ERROR("%s:%s:%d sockfd reached limit! \n",__FILE__,__FUNCTION__ ,__LINE__);
+            ::close(idleFd_);
+            idleFd_ = ::accept(acceptSocket_.fd(),NULL,NULL);
+            ::close(idleFd_);
+            idleFd_ = ::open("/dev/null",O_RDONLY | O_CLOEXEC);
         }
     }
 

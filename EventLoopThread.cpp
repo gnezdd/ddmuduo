@@ -34,7 +34,7 @@ EventLoop *EventLoopThread::startLoop() {
     return loop;
 }
 
-// 在单独的新线程中运行的 ???
+// 在单独的新线程中运行的
 void EventLoopThread::threadFunc() {
     // 创建一个独立的eventLoop 和上面的线程一一对应
     EventLoop loop;

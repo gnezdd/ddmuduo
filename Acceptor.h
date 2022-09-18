@@ -33,6 +33,7 @@ private:
     Channel acceptChannel_;
     NewConnectionCallback  newConnectionCallback_;
     bool listenning_;
+    int idleFd_; // 空闲的文件描述符 用于避免文件描述符耗尽
 };
 
 #endif //DDMUDUO_ACCEPTOR_H
