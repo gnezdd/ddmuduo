@@ -55,14 +55,12 @@ void AsyncLogging::threadFunc() {
             // 如果没满但是时间到了也刷新
             if (buffers_.empty()) {
                 // 阻塞等待缓冲队列有数据或时间到了
-                auto res = cond_.wait_for(lock,std::chrono::seconds(flushInterval_));
-                if (res == std::cv_status::timeout) std::cout<< "chaoshi" << std::endl;
-                else if (!buffers_.empty()) std::cout << "buweikong" << std::endl;
+                cond_.wait_for(lock,std::chrono::seconds(flushInterval_));
             }
             // 将当前缓冲区添加到缓冲队列中
             // 重置当前缓冲区
             buffers_.push_back(currentBuffer_);
-            currentBuffer_->reset();
+
             currentBuffer_ = std::move(newBuffer1);
 
             buffersToWrite.swap(buffers_);

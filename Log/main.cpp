@@ -12,11 +12,11 @@ int main() {
     AsyncLogging log("./ddmuduo.log");
     log.start();
     cout << "i am dd" << endl;
-    for (int i = 0; i < 100000; i++) {
+    for (int i = 0; i < 10; i++) {
         LOG << "ddddddd";
     }
     cout << "i am dd" << endl;
-
+    sleep(10);
 
     return 0;
 }

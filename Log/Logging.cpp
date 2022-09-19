@@ -4,6 +4,7 @@
 
 #include "Logging.h"
 #include "AsyncLogging.h"
+#include "iostream"
 
 #include <time.h>
 #include <sys/time.h>

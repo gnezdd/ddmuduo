@@ -7,6 +7,7 @@
 
 #include <string>
 #include <string.h>
+#include <iostream>
 
 const int kSmallBuffer = 4000;
 const int kLargeBuffer = 4000 * 1000;

@@ -33,8 +33,8 @@ void AppendFile::append(const char *logline, const size_t len) {
 
 void AppendFile::flush() {
     // 强迫将buffer_缓冲区中的数据写回日志文件中
-    fflush(fp_);
-    std::cout << "刷新到磁盘" << std::endl;
+    int res = fflush(fp_);
+
 }
 
 size_t AppendFile::write(const char *logline, size_t len) {
