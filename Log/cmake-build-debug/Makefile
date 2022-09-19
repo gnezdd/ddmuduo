@@ -145,6 +145,21 @@ AsyncLogging.s:
 .PHONY : AsyncLogging.s
 
 # target to build an object file
+CountDownLatch.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/log.dir/build.make CMakeFiles/log.dir/CountDownLatch.o
+.PHONY : CountDownLatch.o
+
+# target to preprocess a source file
+CountDownLatch.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/log.dir/build.make CMakeFiles/log.dir/CountDownLatch.i
+.PHONY : CountDownLatch.i
+
+# target to generate assembly for a file
+CountDownLatch.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/log.dir/build.make CMakeFiles/log.dir/CountDownLatch.s
+.PHONY : CountDownLatch.s
+
+# target to build an object file
 CurrentThread.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/log.dir/build.make CMakeFiles/log.dir/CurrentThread.o
 .PHONY : CurrentThread.o
@@ -158,6 +173,36 @@ CurrentThread.i:
 CurrentThread.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/log.dir/build.make CMakeFiles/log.dir/CurrentThread.s
 .PHONY : CurrentThread.s
+
+# target to build an object file
+FileUtil.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/log.dir/build.make CMakeFiles/log.dir/FileUtil.o
+.PHONY : FileUtil.o
+
+# target to preprocess a source file
+FileUtil.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/log.dir/build.make CMakeFiles/log.dir/FileUtil.i
+.PHONY : FileUtil.i
+
+# target to generate assembly for a file
+FileUtil.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/log.dir/build.make CMakeFiles/log.dir/FileUtil.s
+.PHONY : FileUtil.s
+
+# target to build an object file
+LogFile.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/log.dir/build.make CMakeFiles/log.dir/LogFile.o
+.PHONY : LogFile.o
+
+# target to preprocess a source file
+LogFile.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/log.dir/build.make CMakeFiles/log.dir/LogFile.i
+.PHONY : LogFile.i
+
+# target to generate assembly for a file
+LogFile.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/log.dir/build.make CMakeFiles/log.dir/LogFile.s
+.PHONY : LogFile.s
 
 # target to build an object file
 LogStream.o:
@@ -204,6 +249,21 @@ Thread.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/log.dir/build.make CMakeFiles/log.dir/Thread.s
 .PHONY : Thread.s
 
+# target to build an object file
+main.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/log.dir/build.make CMakeFiles/log.dir/main.o
+.PHONY : main.o
+
+# target to preprocess a source file
+main.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/log.dir/build.make CMakeFiles/log.dir/main.i
+.PHONY : main.i
+
+# target to generate assembly for a file
+main.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/log.dir/build.make CMakeFiles/log.dir/main.s
+.PHONY : main.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -216,9 +276,18 @@ help:
 	@echo "... AsyncLogging.o"
 	@echo "... AsyncLogging.i"
 	@echo "... AsyncLogging.s"
+	@echo "... CountDownLatch.o"
+	@echo "... CountDownLatch.i"
+	@echo "... CountDownLatch.s"
 	@echo "... CurrentThread.o"
 	@echo "... CurrentThread.i"
 	@echo "... CurrentThread.s"
+	@echo "... FileUtil.o"
+	@echo "... FileUtil.i"
+	@echo "... FileUtil.s"
+	@echo "... LogFile.o"
+	@echo "... LogFile.i"
+	@echo "... LogFile.s"
 	@echo "... LogStream.o"
 	@echo "... LogStream.i"
 	@echo "... LogStream.s"
@@ -228,6 +297,9 @@ help:
 	@echo "... Thread.o"
 	@echo "... Thread.i"
 	@echo "... Thread.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 

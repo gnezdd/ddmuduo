@@ -21,7 +21,7 @@ std::string Logger::logFileName_ = "./ddmuduo.log";
 
 // 启动刷新日志 在多线程环境中只会启动一次
 void once_init() {
-    AsyncLogger_ = new AsyncLogging(Logger::geLogFileName());
+    AsyncLogger_ = new AsyncLogging(Logger::getLogFileName());
     AsyncLogger_->start();
 }
 

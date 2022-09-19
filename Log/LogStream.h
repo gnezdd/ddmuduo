@@ -17,7 +17,7 @@ template <int SIZE>
 class FixedBuffer {
 public:
     FixedBuffer() : cur_(data_) {}
-    ~FixedBuffer();
+    ~FixedBuffer(){}
 
     // 获取缓冲区中剩余的空闲空间
     int avail() const {return static_cast<int>(end() - cur_);}

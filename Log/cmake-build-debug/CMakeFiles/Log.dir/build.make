@@ -83,10 +83,24 @@ CMakeFiles/log.dir/AsyncLogging.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/log.dir/AsyncLogging.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /usr/local/dd_projects/ddmuduo/Log/AsyncLogging.cpp -o CMakeFiles/log.dir/AsyncLogging.s
 
+CMakeFiles/log.dir/CountDownLatch.o: CMakeFiles/log.dir/flags.make
+CMakeFiles/log.dir/CountDownLatch.o: /usr/local/dd_projects/ddmuduo/Log/CountDownLatch.cpp
+CMakeFiles/log.dir/CountDownLatch.o: CMakeFiles/log.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/usr/local/dd_projects/ddmuduo/Log/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/log.dir/CountDownLatch.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/log.dir/CountDownLatch.o -MF CMakeFiles/log.dir/CountDownLatch.o.d -o CMakeFiles/log.dir/CountDownLatch.o -c /usr/local/dd_projects/ddmuduo/Log/CountDownLatch.cpp
+
+CMakeFiles/log.dir/CountDownLatch.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/log.dir/CountDownLatch.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /usr/local/dd_projects/ddmuduo/Log/CountDownLatch.cpp > CMakeFiles/log.dir/CountDownLatch.i
+
+CMakeFiles/log.dir/CountDownLatch.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/log.dir/CountDownLatch.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /usr/local/dd_projects/ddmuduo/Log/CountDownLatch.cpp -o CMakeFiles/log.dir/CountDownLatch.s
+
 CMakeFiles/log.dir/CurrentThread.o: CMakeFiles/log.dir/flags.make
 CMakeFiles/log.dir/CurrentThread.o: /usr/local/dd_projects/ddmuduo/Log/CurrentThread.cpp
 CMakeFiles/log.dir/CurrentThread.o: CMakeFiles/log.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/usr/local/dd_projects/ddmuduo/Log/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/log.dir/CurrentThread.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/usr/local/dd_projects/ddmuduo/Log/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/log.dir/CurrentThread.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/log.dir/CurrentThread.o -MF CMakeFiles/log.dir/CurrentThread.o.d -o CMakeFiles/log.dir/CurrentThread.o -c /usr/local/dd_projects/ddmuduo/Log/CurrentThread.cpp
 
 CMakeFiles/log.dir/CurrentThread.i: cmake_force
@@ -97,10 +111,38 @@ CMakeFiles/log.dir/CurrentThread.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/log.dir/CurrentThread.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /usr/local/dd_projects/ddmuduo/Log/CurrentThread.cpp -o CMakeFiles/log.dir/CurrentThread.s
 
+CMakeFiles/log.dir/FileUtil.o: CMakeFiles/log.dir/flags.make
+CMakeFiles/log.dir/FileUtil.o: /usr/local/dd_projects/ddmuduo/Log/FileUtil.cpp
+CMakeFiles/log.dir/FileUtil.o: CMakeFiles/log.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/usr/local/dd_projects/ddmuduo/Log/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/log.dir/FileUtil.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/log.dir/FileUtil.o -MF CMakeFiles/log.dir/FileUtil.o.d -o CMakeFiles/log.dir/FileUtil.o -c /usr/local/dd_projects/ddmuduo/Log/FileUtil.cpp
+
+CMakeFiles/log.dir/FileUtil.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/log.dir/FileUtil.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /usr/local/dd_projects/ddmuduo/Log/FileUtil.cpp > CMakeFiles/log.dir/FileUtil.i
+
+CMakeFiles/log.dir/FileUtil.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/log.dir/FileUtil.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /usr/local/dd_projects/ddmuduo/Log/FileUtil.cpp -o CMakeFiles/log.dir/FileUtil.s
+
+CMakeFiles/log.dir/LogFile.o: CMakeFiles/log.dir/flags.make
+CMakeFiles/log.dir/LogFile.o: /usr/local/dd_projects/ddmuduo/Log/LogFile.cpp
+CMakeFiles/log.dir/LogFile.o: CMakeFiles/log.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/usr/local/dd_projects/ddmuduo/Log/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/log.dir/LogFile.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/log.dir/LogFile.o -MF CMakeFiles/log.dir/LogFile.o.d -o CMakeFiles/log.dir/LogFile.o -c /usr/local/dd_projects/ddmuduo/Log/LogFile.cpp
+
+CMakeFiles/log.dir/LogFile.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/log.dir/LogFile.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /usr/local/dd_projects/ddmuduo/Log/LogFile.cpp > CMakeFiles/log.dir/LogFile.i
+
+CMakeFiles/log.dir/LogFile.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/log.dir/LogFile.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /usr/local/dd_projects/ddmuduo/Log/LogFile.cpp -o CMakeFiles/log.dir/LogFile.s
+
 CMakeFiles/log.dir/LogStream.o: CMakeFiles/log.dir/flags.make
 CMakeFiles/log.dir/LogStream.o: /usr/local/dd_projects/ddmuduo/Log/LogStream.cpp
 CMakeFiles/log.dir/LogStream.o: CMakeFiles/log.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/usr/local/dd_projects/ddmuduo/Log/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/log.dir/LogStream.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/usr/local/dd_projects/ddmuduo/Log/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/log.dir/LogStream.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/log.dir/LogStream.o -MF CMakeFiles/log.dir/LogStream.o.d -o CMakeFiles/log.dir/LogStream.o -c /usr/local/dd_projects/ddmuduo/Log/LogStream.cpp
 
 CMakeFiles/log.dir/LogStream.i: cmake_force
@@ -114,7 +156,7 @@ CMakeFiles/log.dir/LogStream.s: cmake_force
 CMakeFiles/log.dir/Logging.o: CMakeFiles/log.dir/flags.make
 CMakeFiles/log.dir/Logging.o: /usr/local/dd_projects/ddmuduo/Log/Logging.cpp
 CMakeFiles/log.dir/Logging.o: CMakeFiles/log.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/usr/local/dd_projects/ddmuduo/Log/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/log.dir/Logging.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/usr/local/dd_projects/ddmuduo/Log/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/log.dir/Logging.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/log.dir/Logging.o -MF CMakeFiles/log.dir/Logging.o.d -o CMakeFiles/log.dir/Logging.o -c /usr/local/dd_projects/ddmuduo/Log/Logging.cpp
 
 CMakeFiles/log.dir/Logging.i: cmake_force
@@ -128,7 +170,7 @@ CMakeFiles/log.dir/Logging.s: cmake_force
 CMakeFiles/log.dir/Thread.o: CMakeFiles/log.dir/flags.make
 CMakeFiles/log.dir/Thread.o: /usr/local/dd_projects/ddmuduo/Log/Thread.cpp
 CMakeFiles/log.dir/Thread.o: CMakeFiles/log.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/usr/local/dd_projects/ddmuduo/Log/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/log.dir/Thread.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/usr/local/dd_projects/ddmuduo/Log/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/log.dir/Thread.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/log.dir/Thread.o -MF CMakeFiles/log.dir/Thread.o.d -o CMakeFiles/log.dir/Thread.o -c /usr/local/dd_projects/ddmuduo/Log/Thread.cpp
 
 CMakeFiles/log.dir/Thread.i: cmake_force
@@ -139,29 +181,51 @@ CMakeFiles/log.dir/Thread.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/log.dir/Thread.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /usr/local/dd_projects/ddmuduo/Log/Thread.cpp -o CMakeFiles/log.dir/Thread.s
 
+CMakeFiles/log.dir/main.o: CMakeFiles/log.dir/flags.make
+CMakeFiles/log.dir/main.o: /usr/local/dd_projects/ddmuduo/Log/main.cpp
+CMakeFiles/log.dir/main.o: CMakeFiles/log.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/usr/local/dd_projects/ddmuduo/Log/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/log.dir/main.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/log.dir/main.o -MF CMakeFiles/log.dir/main.o.d -o CMakeFiles/log.dir/main.o -c /usr/local/dd_projects/ddmuduo/Log/main.cpp
+
+CMakeFiles/log.dir/main.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/log.dir/main.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /usr/local/dd_projects/ddmuduo/Log/main.cpp > CMakeFiles/log.dir/main.i
+
+CMakeFiles/log.dir/main.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/log.dir/main.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /usr/local/dd_projects/ddmuduo/Log/main.cpp -o CMakeFiles/log.dir/main.s
+
 # Object files for target log
 log_OBJECTS = \
 "CMakeFiles/log.dir/AsyncLogging.o" \
+"CMakeFiles/log.dir/CountDownLatch.o" \
 "CMakeFiles/log.dir/CurrentThread.o" \
+"CMakeFiles/log.dir/FileUtil.o" \
+"CMakeFiles/log.dir/LogFile.o" \
 "CMakeFiles/log.dir/LogStream.o" \
 "CMakeFiles/log.dir/Logging.o" \
-"CMakeFiles/log.dir/Thread.o"
+"CMakeFiles/log.dir/Thread.o" \
+"CMakeFiles/log.dir/main.o"
 
 # External object files for target log
 log_EXTERNAL_OBJECTS =
 
-log: CMakeFiles/log.dir/AsyncLogging.o
-log: CMakeFiles/log.dir/CurrentThread.o
-log: CMakeFiles/log.dir/LogStream.o
-log: CMakeFiles/log.dir/Logging.o
-log: CMakeFiles/log.dir/Thread.o
-log: CMakeFiles/log.dir/build.make
-log: CMakeFiles/log.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/usr/local/dd_projects/ddmuduo/Log/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable log"
+/usr/local/dd_projects/ddmuduo/Log/log: CMakeFiles/log.dir/AsyncLogging.o
+/usr/local/dd_projects/ddmuduo/Log/log: CMakeFiles/log.dir/CountDownLatch.o
+/usr/local/dd_projects/ddmuduo/Log/log: CMakeFiles/log.dir/CurrentThread.o
+/usr/local/dd_projects/ddmuduo/Log/log: CMakeFiles/log.dir/FileUtil.o
+/usr/local/dd_projects/ddmuduo/Log/log: CMakeFiles/log.dir/LogFile.o
+/usr/local/dd_projects/ddmuduo/Log/log: CMakeFiles/log.dir/LogStream.o
+/usr/local/dd_projects/ddmuduo/Log/log: CMakeFiles/log.dir/Logging.o
+/usr/local/dd_projects/ddmuduo/Log/log: CMakeFiles/log.dir/Thread.o
+/usr/local/dd_projects/ddmuduo/Log/log: CMakeFiles/log.dir/main.o
+/usr/local/dd_projects/ddmuduo/Log/log: CMakeFiles/log.dir/build.make
+/usr/local/dd_projects/ddmuduo/Log/log: CMakeFiles/log.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/usr/local/dd_projects/ddmuduo/Log/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable /usr/local/dd_projects/ddmuduo/Log/log"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/log.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/log.dir/build: log
+CMakeFiles/log.dir/build: /usr/local/dd_projects/ddmuduo/Log/log
 .PHONY : CMakeFiles/log.dir/build
 
 CMakeFiles/log.dir/clean:

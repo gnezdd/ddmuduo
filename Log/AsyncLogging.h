@@ -11,7 +11,6 @@
 #include <condition_variable>
 
 #include "LogStream.h"
-#include "Logging.h"
 #include "Thread.h"
 #include "CountDownLatch.h"
 
