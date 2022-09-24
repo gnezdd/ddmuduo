@@ -3,7 +3,7 @@
 //
 
 #include "Socket.h"
-#include "Logger.h"
+#include "Logging.h"
 #include "InetAddress.h"
 
 #include <unistd.h>
@@ -18,13 +18,13 @@ Socket::~Socket() {
 
 void Socket::bindAddress(const InetAddress &localaddr) {
     if (0 != bind(sockfd_,(sockaddr*)localaddr.getSockAddr(),sizeof(sockaddr_in))) {
-        LOG_FATAL("bind sockfd:%d fail \n",sockfd_);
+        LOG << "bind sockfd:" << sockfd_ << "fail";
     }
 }
 
 void Socket::listen() {
     if (0 != ::listen(sockfd_,1024)) {
-        LOG_FATAL("listen sockfd:%d fail \n",sockfd_);
+        LOG << "listen sockfd:" << sockfd_ << "fail";
     }
 }
 
@@ -42,7 +42,7 @@ int Socket::accept(InetAddress *peeraddr) {
 
 void Socket::shutdownWrite() {
     if (::shutdown(sockfd_,SHUT_WR) < 0) {
-        LOG_ERROR("shutdownWrite error");
+        LOG << "shutdownWrite error";
     }
 }
 

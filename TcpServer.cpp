@@ -3,14 +3,14 @@
 //
 
 #include "TcpServer.h"
-#include "Logger.h"
+#include "Logging.h"
 #include "TcpConnection.h"
 
 #include <string.h>
 
 static EventLoop* checkLoopNotNull(EventLoop *loop) {
     if (loop == nullptr) {
-        LOG_FATAL("%s:%s:%d mainLoop is null! \n", __FILE__, __FUNCTION__, __LINE__);
+        LOG << "mainLoop id null!";
     }
     return loop;
 }
@@ -60,15 +60,12 @@ void TcpServer::newConnection(int sockfd, const InetAddress &peerAddr) {
     ++nextConnId_;
     std::string connName = name_ + buf;
 
-    LOG_INFO("TcpServer::newConnection [%s] - new connection [%s] from %s \n",
-             name_.c_str(),connName.c_str(),peerAddr.toIpPort().c_str());
-
     // 通过sockfd获取其绑定的本机ip地址和端口
     sockaddr_in local;
     ::bzero(&local,sizeof local);
     socklen_t addrlen = sizeof local;
     if (::getsockname(sockfd,(sockaddr*)&local,&addrlen) < 0) {
-        LOG_ERROR("sockets::getLocalAddr");
+        LOG << "sockets::getLocalAddr";
     }
 
     InetAddress localAddr(local);
@@ -90,8 +87,6 @@ void TcpServer::removeConnection(const TcpConnectionPtr &conn) {
 }
 
 void TcpServer::removeConnectionInLoop(const TcpConnectionPtr &conn) {
-    LOG_INFO("TcpServer::removeConnectionLoop [%s] - connection %s\n",
-             name_.c_str(),conn->name().c_str());
 
     connections_.erase(conn->name());
     EventLoop *ioLoop = conn->getLoop();

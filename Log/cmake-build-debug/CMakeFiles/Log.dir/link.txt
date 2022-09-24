@@ -1,1 +1,0 @@
-/usr/bin/c++ -g -rdynamic CMakeFiles/log.dir/AsyncLogging.o CMakeFiles/log.dir/CountDownLatch.o CMakeFiles/log.dir/CurrentThread.o CMakeFiles/log.dir/FileUtil.o CMakeFiles/log.dir/LogFile.o CMakeFiles/log.dir/LogStream.o CMakeFiles/log.dir/Logging.o CMakeFiles/log.dir/Thread.o CMakeFiles/log.dir/main.o -o /usr/local/dd_projects/ddmuduo/Log/log  -lpthread 

@@ -3,7 +3,7 @@
 //
 
 #include "Acceptor.h"
-#include "Logger.h"
+#include "Logging.h"
 #include "InetAddress.h"
 
 #include <sys/types.h>
@@ -15,14 +15,14 @@
 static int createNonblocking() {
     int sockfd = ::socket(AF_INET,SOCK_STREAM | SOCK_NONBLOCK | SOCK_CLOEXEC,0);
     if (sockfd < 0) {
-        LOG_FATAL("%s:%s:%d listen socket create err:%d\n",__FILE__,__FUNCTION__ ,__LINE__,errno);
+        LOG << "listen socket create err" << errno;
     }
     return sockfd;
 }
 
 static int createIdleFd() {
     int idleFd = ::open("/dev/null",O_RDONLY | O_CLOEXEC);
-    if (idleFd < 0) LOG_FATAL("%s:%s:%d idlfFd_ create err:%d\n",__FILE__,__FUNCTION__ ,__LINE__,errno);
+    if (idleFd < 0) LOG << "idlfFd_ create err:" << errno;
     return idleFd;
 }
 
@@ -61,10 +61,10 @@ void Acceptor::handleRead() {
             ::close(connfd);
         }
     } else {
-        LOG_ERROR("%s:%s:%d accept err:%d\n",__FILE__,__FUNCTION__ ,__LINE__,errno);
+        LOG << "accept err:" << errno;
         // 文件描述符耗尽
         if (errno == EMFILE) {
-            LOG_ERROR("%s:%s:%d sockfd reached limit! \n",__FILE__,__FUNCTION__ ,__LINE__);
+            LOG << "sockfd reached limit!";
             ::close(idleFd_);
             idleFd_ = ::accept(acceptSocket_.fd(),NULL,NULL);
             ::close(idleFd_);

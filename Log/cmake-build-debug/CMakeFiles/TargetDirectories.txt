@@ -1,3 +1,0 @@
-/usr/local/dd_projects/ddmuduo/Log/cmake-build-debug/CMakeFiles/log.dir
-/usr/local/dd_projects/ddmuduo/Log/cmake-build-debug/CMakeFiles/edit_cache.dir
-/usr/local/dd_projects/ddmuduo/Log/cmake-build-debug/CMakeFiles/rebuild_cache.dir

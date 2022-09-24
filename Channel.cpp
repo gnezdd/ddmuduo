@@ -4,7 +4,7 @@
 
 #include "Channel.h"
 #include "EventLoop.h"
-#include "Logger.h"
+#include "Logging.h"
 
 #include <sys/epoll.h>
 
@@ -52,7 +52,7 @@ void Channel::handleEvent(Timestamp receiveTime) {
 
 // 根据poller监听的channel发生的具体事件 由channel负责调用具体的回调操作
 void Channel::handleEventWithGuard(Timestamp receiveTime) {
-    LOG_INFO("channel handleEvent revents:%d\n",revents_);
+    LOG << "channel handleEvent revents:" << revents_;
     if ((revents_ & EPOLLHUP) && !(revents_ & EPOLLIN)) {
         if (closeCallback_) closeCallback_();
     }
