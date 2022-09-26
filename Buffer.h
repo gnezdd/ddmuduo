@@ -129,6 +129,7 @@ private:
     }
 
     std::vector<char> buffer_;
+    // 不使用指针是为了防止迭代器失效
     size_t readerIndex_;
     size_t writeIndex_;
 };

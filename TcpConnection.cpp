@@ -81,6 +81,8 @@ void TcpConnection::sendInLoop(const void *data, size_t len) {
 
             }
         } else {
+            // 不需要错误处理
+            // 一旦发生错误handleRead会读取到0字节 继而关闭连接
             nwrote = 0;
             if (errno != EWOULDBLOCK) {
                 LOG << "TcpConnection::sendInLoop";
@@ -185,7 +187,6 @@ void TcpConnection::handleClose() {
     setState(kDisconnected);
     channel_->disableAll();
 
-    // ???
     TcpConnectionPtr connPtr(shared_from_this());
     connectionCallback_(connPtr); // 执行关闭连接的回调
     closeCallback_(connPtr); // 关闭连接的回调

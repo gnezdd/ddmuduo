@@ -40,7 +40,7 @@ void Channel::remove() {
     loop_->removeChannel(this);
 }
 
-// fd得到poller通知后处理事件 ???
+// fd得到poller通知后处理事件
 void Channel::handleEvent(Timestamp receiveTime) {
     if (tied_) {
         std::shared_ptr<void> guard = tie_.lock();

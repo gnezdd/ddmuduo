@@ -57,7 +57,7 @@ private:
     std::unique_ptr<Acceptor> acceptor_;
     std::shared_ptr<EventLoopThreadPool> threadPool_;
 
-    ConnectionCallback connectionCallback_; // 有新连接时的回调
+    ConnectionCallback connectionCallback_; // 连接建立断开时的回调
     MessageCallback messageCallback_; // 有读写消息时的回调
     WriteCompleteCallback writeCompleteCallback_; // 消息发送完成后的回调
 

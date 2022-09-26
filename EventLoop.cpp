@@ -14,6 +14,8 @@
 #include <memory>
 
 // 防止一个线程创建多个EventLoop
+// 线程局部存储TLS 每个线程都有一个该变量的实例
+// 可以通过该值判断该线程是否已经创建了EventLoop
 __thread EventLoop *t_loopInThisThread = nullptr;
 
 // 定义默认的poller IO复用接口的超时时间
@@ -35,6 +37,7 @@ EventLoop::EventLoop()
     , wakeupFd_(createEventfd())
     , wakeupChannel_(new Channel(this,wakeupFd_)) {
     if (t_loopInThisThread) {
+        // addcode FATAL日志 需要退出
         LOG << "Another EventLoop:" << t_loopInThisThread <<  "exists in this thread:" << threadId_;
     } else {
         t_loopInThisThread = this;

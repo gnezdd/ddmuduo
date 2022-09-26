@@ -36,6 +36,8 @@ Timestamp EPollPoller::poll(int timeoutMs, ChannelList *activeChannels) {
 
     if (numEvents > 0) {
         LOG << numEvents << "events happened";
+        // 将有发生事件的channel填入eventloop传递过来的activeChannels
+        // 通过activeChannels告诉EventLoop有什么channel的事件发生
         fillActiveChannels(numEvents,activeChannels);
         if (numEvents == events_.size()) {
             events_.resize(events_.size() * 2);
@@ -43,7 +45,7 @@ Timestamp EPollPoller::poll(int timeoutMs, ChannelList *activeChannels) {
     } else if (numEvents == 0) {
         LOG << "timeout!";
     } else {
-        // 不是外部中断 ???
+        // 不是外部中断
         if (saveErrno != EINTR) {
             errno = saveErrno;
             LOG << "EPollPoller::poll() err!";
@@ -54,6 +56,7 @@ Timestamp EPollPoller::poll(int timeoutMs, ChannelList *activeChannels) {
 
 void EPollPoller::fillActiveChannels(int numEvents, ChannelList *activeChannels) {
     for(int i = 0; i < numEvents; i++) {
+        // 通过poll返回的events可以获取到有发生事件的channel以及发生的事件
         Channel *channel = static_cast<Channel*>(events_[i].data.ptr);
         channel->set_revents(events_[i].events);
         activeChannels->push_back(channel); // EventLoop就拿到了其poller给它返回发生事件的channel列表

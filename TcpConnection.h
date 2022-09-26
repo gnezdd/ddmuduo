@@ -75,6 +75,7 @@ private:
     const InetAddress localAddr_;
     const InetAddress peerAddr_;
 
+    // 用户提供的
     ConnectionCallback connectionCallback_;
     MessageCallback messageCallback_;
     WriteCompleteCallback writeCompleteCallback_;
