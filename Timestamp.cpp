@@ -4,7 +4,8 @@
 
 #include "Timestamp.h"
 
-#include <time.h>
+#include <sys/time.h>
+#include <stdio.h>
 
 // 构造函数
 Timestamp::Timestamp() : microSecondsSinceEpoch_(0) {}
@@ -15,7 +16,10 @@ Timestamp::Timestamp(int64_t micreSecondsSinceEpoch)
 
 // 获取时间
 Timestamp Timestamp::now() {
-    return Timestamp(time(NULL));
+    struct timeval tv;
+    gettimeofday(&tv, NULL);
+    int64_t seconds = tv.tv_sec;
+    return Timestamp(seconds * Timestamp::kMicroSecondsPerSecond + tv.tv_usec);
 }
 
 // 转化为字符串

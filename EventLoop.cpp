@@ -6,6 +6,7 @@
 #include "Logging.h"
 #include "Poller.h"
 #include "Channel.h"
+#include "TimerQueue.h"
 
 #include <sys/eventfd.h>
 #include <unistd.h>
@@ -34,6 +35,7 @@ EventLoop::EventLoop()
     , callingPendingFunctors_(false)
     , threadId_(CurrentThread::tid())
     , poller_(Poller::newDefaultPoller(this))
+    , timerQueue_(new TimerQueue(this))
     , wakeupFd_(createEventfd())
     , wakeupChannel_(new Channel(this,wakeupFd_)) {
     if (t_loopInThisThread) {
@@ -113,6 +115,24 @@ void EventLoop::queueInLoop(Functor cb) {
     // 唤醒相应的 需要执行上面回调操作的loop线程
     // || callingPendingFunctors_表示当前loop正在执行回调 但是loop又有了新的回调
     if (!isInLoopThread() || callingPendingFunctors_) wakeup(); // 唤醒loop所在的线程
+}
+
+TimerId EventLoop::runAt(Timestamp time, TimerCallback cb) {
+    return timerQueue_->addTimer(std::move(cb),time,0.0);
+}
+
+TimerId EventLoop::runAfter(double delay, TimerCallback cb) {
+    Timestamp time(addTime(Timestamp::now(),delay));
+    return runAt(time,std::move(cb));
+}
+
+TimerId EventLoop::runEvery(double interval, TimerCallback cb) {
+    Timestamp time(addTime(Timestamp::now(),interval));
+    return timerQueue_->addTimer(std::move(cb),time,interval);
+}
+
+void EventLoop::cancel(TimerId timerId) {
+    return timerQueue_->cancel(timerId);
 }
 
 void EventLoop::handleRead() {

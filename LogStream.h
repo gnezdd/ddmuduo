@@ -9,13 +9,15 @@
 #include <string.h>
 #include <iostream>
 
+#include "noncopyable.h"
+
 const int kSmallBuffer = 4000;
 const int kLargeBuffer = 4000 * 1000;
 
-// 日志流的缓冲区 addcode noncopyable
+// 日志流的缓冲区
 // 非类型参数的模板类 通过传入SIZE表示缓冲区大小
 template <int SIZE>
-class FixedBuffer {
+class FixedBuffer : noncopyable {
 public:
     FixedBuffer() : cur_(data_) {}
     ~FixedBuffer(){}

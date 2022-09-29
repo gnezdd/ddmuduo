@@ -22,5 +22,6 @@ using MessageCallback = std::function<void(const TcpConnectionPtr&,
                                         Timestamp)>;
 
 using HighWaterMarkCallback = std::function<void(const TcpConnectionPtr&,size_t)>;
+using TimerCallback = std::function<void()>;
 
 #endif //DDMUDUO_CALLBACKS_H

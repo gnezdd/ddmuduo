@@ -5,6 +5,7 @@
 #include "FileUtil.h"
 #include "iostream"
 
+// 打开磁盘上的日志文件并为文件设置一个缓冲区
 AppendFile::AppendFile(std::string filename)
     : fp_(fopen(filename.c_str(),"ae")) {
     // 将buffer_设置为文件的缓冲区

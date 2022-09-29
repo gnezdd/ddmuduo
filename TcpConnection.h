@@ -14,6 +14,7 @@
 #include <memory>
 #include <string>
 #include <atomic>
+#include <boost/any.hpp>
 class Channel;
 class EventLoop;
 class Socket;
@@ -52,6 +53,10 @@ public:
     // 连接销毁
     void connectDestroyed();
 
+    void setContext(const boost::any& context) {context_ = context;}
+
+    const boost::any& getContext() const {return context_;}
+
 private:
     enum StateE {kDisconnected, kConnecting, kConnected, kDisconnecting};
     void setState(StateE state) {state_ = state;}
@@ -87,6 +92,7 @@ private:
     Buffer inputBuffer_;
     Buffer outputBuffer_;
 
+    boost::any context_;
 
 };
 
